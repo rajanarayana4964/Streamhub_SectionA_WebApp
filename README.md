@@ -1,32 +1,126 @@
-# React + TypeScript + Vite
+# Streamhub Section A – Personal Finance Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## Overview
 
-Currently, two official plugins are available:
+A small interactive web application built for the Streamhub QA Automation Assessment – Section A.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The application is a **Personal Finance Dashboard** that allows users to view financial summaries, analyze expenses, filter transactions, and add new income or expense transactions.
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Dashboard
+- Total Income
+- Total Expenses
+- Current Balance
+- Savings Rate
+- Expense Breakdown chart
+- Monthly Income vs Expense chart
+- Recent Transactions
 
-## Expanding the Oxlint configuration
+### Reports
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+The Reports view provides interactive filters for:
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+- Month
+- Category
+- Transaction Type
+
+It displays filtered income, expenses, balance, transaction count, and transaction details.
+
+### Add Transaction
+
+Users can add a new transaction using:
+
+- Date
+- Transaction Type
+- Category
+- Amount
+- Description
+
+The dashboard calculations and charts update based on the added transaction.
+
+## Technology Stack
+
+- React
+- TypeScript
+- Vite
+- Recharts
+- CSS
+- Playwright
+- Node.js / npm
+
+## Project Structure
+
+```text
+Streamhub_SectionA_WebApp/
+├── public/
+├── src/
+│   ├── App.tsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.tsx
+├── tests/
+│   └── dashboard.spec.ts
+├── playwright.config.ts
+├── package.json
+├── package-lock.json
+└── README.md
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Run the Application
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open the application in the browser at the URL shown by Vite.
+
+## Run UI Automation Tests
+
+Run the Playwright test:
+
+```bash
+npx playwright test
+```
+
+### Test Coverage
+
+The Playwright test verifies that the dashboard:
+
+- Loads successfully
+- Displays the dashboard heading
+- Displays Total Income
+- Displays Total Expenses
+- Displays Current Balance
+- Displays Savings Rate
+- Displays the expected financial summary values
+
+## Assessment Coverage
+
+This project satisfies the Section A requirements:
+
+- ✅ Dashboard / landing view with summarized data
+- ✅ Report/detail view driven by user filters
+- ✅ Interactive user input form
+- ✅ Charts reflecting underlying financial data
+- ✅ UI automation using Playwright
+
+## Test Result
+
+Latest Playwright execution:
+
+```text
+1 passed
+```
+
+## Author
+
+Rajanarayana
